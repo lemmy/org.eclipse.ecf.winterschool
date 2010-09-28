@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rmap
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.eclipse.org/buckminster/RMap-1.0"
+	xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0"
+	xmlns:mp="http://www.eclipse.org/buckminster/MavenProvider-1.0"
+	xmlns:pmp="http://www.eclipse.org/buckminster/PDEMapProvider-1.0">
+
+	<!-- de.c1wps -->
+	<searchPath name="de.c1wps">
+		<provider readerType="git" componentTypes="osgi.bundle" resolutionFilter="">
+			<uri format="{0}winterschool/{1}">
+				<bc:propertyRef key="workspace.root"/>
+				<bc:propertyRef key="buckminster.component"/>
+			</uri>
+			<property key="git.remote.uri" value="git@github.com:lemmy/de.c1wps.winterschool.git"/>
+			<property key="git.remote.name" value="winterschool"/>
+			<property key="git.auto.fetch" value="true"/>
+		</provider>
+	</searchPath>
+
+	<!-- ecf -->
+	<searchPath name="org.eclipse.ecf">
+		<provider readerType="p2" componentTypes="osgi.bundle,eclipse.feature,buckminster" mutable="false" source="false">
+			<uri format="http://download.ecf-project.org/repo?importType=binary"/>
+		</provider>
+	</searchPath>
+
+	<!-- default -->
+	<searchPath name="default">
+		<!-- RC3 -->
+		<provider readerType="p2" componentTypes="osgi.bundle" mutable="false" source="false">
+			<uri format="http://download.eclipse.org/releases/helios/?importType=binary"/>
+		</provider>
+	</searchPath>
+	
+	<!-- below order does matter!!! -->
+
+	<!-- de.c1wps -->
+	<locator searchPathRef="de.c1wps" pattern="^de\.c1wps(\..+)?" />
+	
+	<!-- ECF -->
+	<locator searchPathRef="org.eclipse.ecf" pattern="^ch\.ethz\.iks(\..+)?" />
+	<locator searchPathRef="org.eclipse.ecf" pattern="^org\.eclipse\.ecf(\..+)?" />
+	<locator searchPathRef="org.eclipse.ecf" pattern="^org\.eclipse\.team\.ecf(\..+)?" />
+	<locator searchPathRef="org.eclipse.ecf" pattern="^org\.jivesoftware\.smack$" />
+	<locator searchPathRef="org.eclipse.ecf" pattern="^org\.apache\.zookeeper$" />
+
+	<!-- Eclipse other (Orbit atm) -->	
+	<locator searchPathRef="default" pattern=".*" />
+</rmap>
