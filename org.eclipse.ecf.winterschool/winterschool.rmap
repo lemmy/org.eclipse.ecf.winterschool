@@ -8,7 +8,7 @@
 
 	<!-- de.c1wps -->
 	<searchPath name="de.c1wps">
-		<provider readerType="git" componentTypes="osgi.bundle" resolutionFilter="" mutable="false" source="true">
+		<provider readerType="git" componentTypes="osgi.bundle,eclipse.feature,buckminster" resolutionFilter="" mutable="false" source="true">
 			<uri format="{0}/origin,{1}">
 				<bc:propertyRef key="workspace.root"/>
 				<bc:propertyRef key="buckminster.component"/>
