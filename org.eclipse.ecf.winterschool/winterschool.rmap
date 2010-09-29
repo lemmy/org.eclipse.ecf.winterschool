@@ -8,14 +8,19 @@
 
 	<!-- de.c1wps -->
 	<searchPath name="de.c1wps">
-		<provider readerType="git" componentTypes="osgi.bundle" resolutionFilter="">
-			<uri format="{0}/winterschool,{1}">
+		<provider readerType="git" componentTypes="osgi.bundle" resolutionFilter="" mutable="false" source="true">
+			<uri format="{0}/origin,{1}">
 				<bc:propertyRef key="workspace.root"/>
 				<bc:propertyRef key="buckminster.component"/>
 			</uri>
+			<!--
 			<property key="git.remote.uri" value="git@github.com:lemmy/de.c1wps.winterschool.git"/>
-			<property key="git.remote.name" value="winterschool"/>
-			<property key="git.auto.fetch" value="true"/>
+			<property key="git.remote.uri" value="https://lemmy@github.com/lemmy/de.c1wps.winterschool.git"/>
+			-->
+			<property key="git.remote.uri" value="git://github.com/lemmy/de.c1wps.winterschool.git"/>
+			
+			<property key="git.remote.name" value="origin"/>
+			<!--<property key="git.auto.fetch" value="true"/>-->
 		</provider>
 	</searchPath>
 
@@ -42,9 +47,6 @@
 	<!-- ECF -->
 	<locator searchPathRef="org.eclipse.ecf" pattern="^ch\.ethz\.iks(\..+)?" />
 	<locator searchPathRef="org.eclipse.ecf" pattern="^org\.eclipse\.ecf(\..+)?" />
-	<locator searchPathRef="org.eclipse.ecf" pattern="^org\.eclipse\.team\.ecf(\..+)?" />
-	<locator searchPathRef="org.eclipse.ecf" pattern="^org\.jivesoftware\.smack$" />
-	<locator searchPathRef="org.eclipse.ecf" pattern="^org\.apache\.zookeeper$" />
 
 	<!-- Eclipse other (Orbit atm) -->	
 	<locator searchPathRef="default" pattern=".*" />
