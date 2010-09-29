@@ -37,7 +37,7 @@
 			<uri format="http://download.eclipse.org/eclipse/updates/3.6/R-3.6.1-201009090800/?importType=binary"/>
 		</provider>
 		<provider readerType="p2" componentTypes="osgi.bundle,eclipse.feature,buckminster" mutable="false" source="false">
-			<uri format="ftp://rsync.osuosl.org/pub/eclipse/tools/orbit/downloads/drops/S20100831105311/updateSite/?importType=binary"/>
+			<uri format="http://download.eclipse.org/tools/orbit/downloads/drops/S20100831105311/updateSite/?importType=binary"/>
 		</provider>
 	</searchPath>
 	
