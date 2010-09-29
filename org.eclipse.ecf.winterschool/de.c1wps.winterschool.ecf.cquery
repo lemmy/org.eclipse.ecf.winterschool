@@ -5,5 +5,5 @@
     <cq:advisorNode namePattern="^org\.eclipse\.ecf(\..+)?" mutableLevel="REJECT" sourceLevel="REJECT" useTargetPlatform="false" useWorkspace="false"/>
     <cq:advisorNode namePattern="^ch\.ehtz(\..+)?" mutableLevel="REJECT" sourceLevel="REJECT" useTargetPlatform="false" useWorkspace="false"/>
     <cq:advisorNode namePattern="^org\.eclipse\.equinox\.p2\.user\.ui$" skipComponent="true" useTargetPlatform="false"/>
-    <cq:advisorNode namePattern=".*" mutableLevel="REJECT" sourceLevel="REJECT"/>
+    <cq:advisorNode namePattern=".*" useTargetPlatform="false" mutableLevel="REJECT" sourceLevel="REJECT"/>
 </cq:componentQuery>
